@@ -1,0 +1,10 @@
+﻿.cuadro-habitacion{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border: 3px solid #212253;
+    border-radius: 3px;
+    padding: 20px;
+    width: 100%;
+    margin-top: 50px;
+}

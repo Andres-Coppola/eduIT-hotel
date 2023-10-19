@@ -1,0 +1,136 @@
+﻿
+@model Hotel_Alumnos.Models.Reserva
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+<h2> Menu de Reservas </h2>
+@using (Html.BeginForm("GuardarReserva", "Reservas", FormMethod.Post, new { @id = "form-reserva" }))
+{
+
+    <div class="row">
+        <div class="col-md-6 ">
+            <div class="">
+
+                @Html.Label("Fecha de Ingreso:") <br />
+                @Html.TextBoxFor(x => x.FechaIngreso, new { @class = "form-control datepicker", @Value = "" })
+
+            </div>
+        </div>
+
+        <div class="col-md-6">
+            <div class="">
+
+                @Html.Label("Fecha de Egreso:") <br />
+                @Html.TextBoxFor(x => x.FechaEgreso, new { @class = "form-control datepicker", @Value = "" })
+
+
+            </div>
+        </div>
+    </div>
+
+    <br />
+    <br />
+
+    <div class="row">
+        <div class="col-md-6 ">
+            <div class="">
+
+                @Html.Label("Tipo de Habitaciones") <br />
+                @Html.DropDownList("ddlTipoHab", (SelectList)ViewBag.tipos, "Seleccione una opcion", new { @class = "ddl", style = "width: 100%;" })
+
+            </div>
+        </div>
+
+        <div class="col-md-6">
+            <div class="">
+
+                @Html.Label("Seleccione Habitacion") <br />
+                @Html.DropDownListFor(x => x.Habitacion.Id, new SelectList(new List<SelectListItem>()), "Seleccione Una Habitacion", new { @class = "ddl", style = "width: 100%;" })
+
+            </div>
+        </div>
+    </div>
+
+
+
+    <div class="row">
+        <div class="col-md-12">
+            <div class="cuadro-habitacion" id="cuadroHab" hidden>
+                <div class="row">
+                    <div class="col-md-5">
+                        <div class="imagen-cuadro-habitacion">
+                            <img id="imgHabitacion" src="~/Content/Images/grandsuite.jpg" />
+                        </div>
+                    </div>
+                    <div class="col-md-7">
+                        <div class="texto-cuadro-habitacion" id="textoDescripcion" style="padding-top: 50px; padding-bottom: 50px;">
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+<br />
+<br />
+<br />
+
+<div id="seccion-huesped" class="row" hidden>
+
+    <br />
+    <br />
+    <h2> Huesped </h2>
+    <br /><br /><br />
+    <br />
+    <div class="col-md-4 ">
+        <div class="">
+
+            @Html.LabelFor(x => x.Huesped.Nombre) <br />
+            @Html.TextBoxFor(x => x.Huesped.Nombre)
+
+        </div>
+    </div>
+
+    <div class="col-md-4">
+        <div class="">
+
+            @Html.LabelFor(x => x.Huesped.Apellido) <br />
+            @Html.TextBoxFor(x => x.Huesped.Apellido)
+
+        </div>
+    </div>
+
+    <div class="col-md-4">
+    <div class="">
+
+        @Html.LabelFor(x => x.Huesped.Telefono) <br />
+        @Html.TextBoxFor(x => x.Huesped.Telefono)
+
+    </div>
+</div>
+
+</div>
+
+<br />
+<br />
+<br />
+
+
+}  <!-- Final del Formulario-->
+
+
+<button id="guardarReserva">Guardar</button>
+
+
+@Scripts.Render("~/Scripts/Reservas/Index.js")
+@Styles.Render("~/Content/Reservas/Index.css")
+
+
+<script>
+    var urlConsultarHabitacionesPorTipo = "@Url.Action("ConsultarHabitacionesPorTipo", "Reservas")";
+    var urlGuardarReserva = "@Url.Action("GuardarReserva", "Reservas")";
+</script>
