@@ -48,7 +48,8 @@ namespace Hotel_Alumnos.Controllers
 
 			var miVari = 156;
 			var MiotraVar = 152;
-			
+
+			var MiTercerVariable = 123;
 
 			return View(miModelo);
 		}
