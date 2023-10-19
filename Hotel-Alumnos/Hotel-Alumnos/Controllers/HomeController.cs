@@ -46,6 +46,9 @@ namespace Hotel_Alumnos.Controllers
 
 			#endregion
 
+			var miVari = 156;
+			var MiotraVar = 152;
+			
 
 			return View(miModelo);
 		}
