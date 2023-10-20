@@ -70,6 +70,7 @@ namespace Hotel_Alumnos.Controllers
 
 			}
 
+			var OtraVariable = 0;
 			
 			#region Tipos de Habitaciones
 
