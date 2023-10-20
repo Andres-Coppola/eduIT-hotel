@@ -95,7 +95,9 @@ namespace Hotel_Alumnos.Controllers
 		public JsonResult ConteoDeReservas(int tipoHab, DateTime fechaIngreso, DateTime fechaEgreso)
 		{
 
-			var miVariable = 0;
+			var miVariable = 1;
+
+
 
 			return Json(6, JsonRequestBehavior.AllowGet);
 		}
