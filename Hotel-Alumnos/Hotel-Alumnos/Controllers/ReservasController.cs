@@ -90,6 +90,14 @@ namespace Hotel_Alumnos.Controllers
         }
 
 
+		[HttpPost]
+		public JsonResult ConteoDeReservas(int tipoHab, DateTime fechaIngreso, DateTime fechaEgreso)
+		{
+
+
+			return Json(6, JsonRequestBehavior.AllowGet);
+		}
+
 
 		[HttpPost]
 		public JsonResult ConsultarHabitacionesPorTipo(int tipoHab, DateTime fechaIngreso, DateTime fechaEgreso)
