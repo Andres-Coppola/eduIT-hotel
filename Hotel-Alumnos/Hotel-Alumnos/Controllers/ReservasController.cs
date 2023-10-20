@@ -97,8 +97,6 @@ namespace Hotel_Alumnos.Controllers
 
 			var miVariable = 1;
 
-
-
 			return Json(6, JsonRequestBehavior.AllowGet);
 		}
 
